@@ -14,11 +14,11 @@ const splitText = (text) => {
       // I need to slice the last empty space of the array OR
       // I need to create arrays for each instance and then at the end join and take out of array
       currentCaptionCount += 1
-      captionsArray.push("")
+      captionsArray.push(`${textArray[i]} `)
     }
   }
 
-  return captionsArray.map(caption => <li>{caption}</li>)
+  return captionsArray.map((caption, index) => <li key={index}>{caption}</li>)
 }
 
 

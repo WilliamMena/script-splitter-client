@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Scripts from '../components/scripts.js'
+import ScriptInput from '../components/scriptInput.js'
 
 const API_URL = process.env.REACT_APP_API_URL
 
@@ -25,11 +26,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>All Scripts</h1>
         {this.state.loading ?
           <h1>Loading!!!</h1>
           :
-          <Scripts scripts={this.state.scripts} />
+          <div>
+            <h3>Enter new script</h3>
+            <ScriptInput />
+            <h1>All Scripts</h1>
+            <Scripts scripts={this.state.scripts} />
+          </div>
         }
       </div>
     );
