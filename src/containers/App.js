@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Scripts from './scripts.js'
-import ScriptInput from '../components/scriptInput.js'
+import ScriptForm from '../components/scriptForm.js'
 
 class App extends Component {
 
@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
           <div>
             <h3>Enter new script</h3>
-            <ScriptInput />
+            <ScriptForm />
             <h1>All Scripts</h1>
             <Scripts />
           </div>

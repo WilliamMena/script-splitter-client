@@ -1,9 +1,12 @@
-export default function scriptReducer(state = [], action) {
+export default function scriptsReducer(state = [], action) {
   switch(action.type) {
     case 'GET_SCRIPTS_SUCCESS':
       return action.scripts;
 
-      default:
-        return state;
+    case 'CREATE_SCRIPT_SUCCESS':
+      return state.concat(action.script)
+
+    default:
+      return state;
   }
 }
