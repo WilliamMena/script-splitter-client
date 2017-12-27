@@ -2,7 +2,7 @@ import {resertScriptFormData} from './scriptForm.js'
 
 const API_URL = process.env.REACT_APP_API_URL
 
-// action creators
+// action creators - typically used in the async actions below
 const setScripts = scripts => {
   return {
     type: "GET_SCRIPTS_SUCCESS",
@@ -14,6 +14,14 @@ const addScript = script => {
   return {
     type: 'CREATE_SCRIPT_SUCCESS',
     script
+  }
+}
+
+const afterDestroyScript = scriptId => {
+  // look through the delete lectures in the curriculumn
+  return {
+    type: 'DELETE_SCRIPT_SUCCESS',
+    scriptId
   }
 }
 
@@ -40,6 +48,18 @@ export const createScript = script => {
     })
     .then(response => response.json())
     .then(script => dispatch(addScript(script)))
+    .catch(error => console.log(error))
+  }
+}
+
+export const deleteScript = scriptId => {
+
+  return dispatch => {
+    return fetch(`${API_URL}/scripts/${scriptId}`, {
+      method: "DELETE",
+      headers: {"Content-Type": "application/json"}
+    })
+    .then(response => dispatch(afterDestroyScript(scriptId)))
     .catch(error => console.log(error))
   }
 }
