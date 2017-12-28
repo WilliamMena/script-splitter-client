@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 const splitText = (text) => {
   const limit = 45
   let currentCaptionCount = 0

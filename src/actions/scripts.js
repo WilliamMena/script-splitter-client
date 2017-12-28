@@ -32,7 +32,6 @@ export const getScripts = () => {
       .then(response => response.json())
       .then(scripts => {
         dispatch(setScripts(scripts))
-        dispatch(resertScriptFormData())
       })
       .catch(error => console.log(error))
   }
@@ -47,7 +46,10 @@ export const createScript = script => {
       body: JSON.stringify({script: Object.assign({}, script, {user_id: "1"})})
     })
     .then(response => response.json())
-    .then(script => dispatch(addScript(script)))
+    .then(script => {
+      dispatch(addScript(script))
+      dispatch(resertScriptFormData())
+    })
     .catch(error => console.log(error))
   }
 }

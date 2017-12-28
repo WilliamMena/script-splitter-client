@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import CaptionSplit from '../containers/captionSplit'
 import { connect } from 'react-redux'
-import { getScripts, deleteScript } from '../actions/scripts.js'
+import { getScripts } from '../actions/scripts.js'
 import Script from '../components/script.js'
 
 class Scripts extends Component {
@@ -29,4 +29,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, {getScripts, deleteScript})(Scripts);
+export default connect(mapStateToProps, {getScripts})(Scripts);
