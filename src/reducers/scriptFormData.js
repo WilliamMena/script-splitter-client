@@ -1,6 +1,7 @@
 const initialState = {
   title: '',
-  text: ''
+  text: '',
+  characters: 0
 }
 
 export default function scriptFormData(state = initialState, action) {

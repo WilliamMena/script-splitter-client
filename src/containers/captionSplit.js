@@ -1,7 +1,7 @@
 import React from 'react';
 
-const splitText = (text) => {
-  const limit = 45
+const splitText = ({text, characters}) => {
+  const limit = (characters ? characters : 45)
   let currentCaptionCount = 0
   const textArray = text.split(" ")
   const captionsArray = [""];
@@ -22,7 +22,7 @@ const splitText = (text) => {
 
 const CaptionSplit = (props) =>
   <div>
-      {splitText(props.text)}
+      {splitText(props)}
   </div>
 
 export default CaptionSplit

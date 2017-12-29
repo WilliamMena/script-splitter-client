@@ -22,7 +22,7 @@ class Script extends Component {
         <h4>{this.props.script.title}</h4>
         <button name={this.props.script.id} onClick={event => this.handleOnClick(event)} >Delete</button>
         <p>{this.props.script.text}</p>
-        <CaptionSplit text={this.props.script.text} />
+        <CaptionSplit characters={this.props.script.characters} text={this.props.script.text} />
       </div>
     )
   }

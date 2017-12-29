@@ -24,17 +24,22 @@ class ScriptForm extends Component {
 
 
   render() {
-    const { title, text } = this.props.scriptFormData
+    const { title, text, characters } = this.props.scriptFormData
     return (
       <div>
         <form onSubmit={this.handleOnSubmit}>
           <label>Title </label>
           <input type='text' name="title" value={title} onChange={event => this.handleOnChange(event)}/>
           <br/>
+
           <br/>
           <textarea name="text" value={text} onChange={event => this.handleOnChange(event)} rows='8' cols='100' />
 
           <br/>
+          <label>Split by how many characters? (Including spaces) </label>
+          <input type="text" name="characters" value={characters} onChange={event => this.handleOnChange(event)} />
+          <br/>
+          
           <button type='submit'>Submit new script</button>
         </form>
       </div>
