@@ -50,7 +50,7 @@ ReactDOM.render(
         <div className="App">
           <Navbar />
           <Route exact path="/" component={App} />
-          <Route exact path="/scripts" render={() => <Scripts />} />
+          <Route exact path="/scripts" component={Scripts} />
         </div>
       </Router>
     </Provider>,
