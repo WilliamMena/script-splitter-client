@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import CaptionSplit from '../containers/captionSplit'
 import { connect } from 'react-redux'
 import { getScripts } from '../actions/scripts.js'
 import Script from '../components/script.js'
@@ -15,6 +14,7 @@ class Scripts extends Component {
   render() {
     return (
       <div>
+        <h1>All Scripts</h1>
         {this.props.scripts.map((script, index) =>
           <Script key={index} script={script} />
         )}
