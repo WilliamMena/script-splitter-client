@@ -19,7 +19,7 @@ class Script extends Component {
   render() {
     return (
       <div key={this.props.script.id}>
-        <h4>{this.props.script.title}</h4>
+        <h1>{this.props.script.title}</h1>
         <p>Split by {this.props.script.characters || 45} characters</p>
         <button name={this.props.script.id} onClick={event => this.handleOnClick(event)} >Delete</button>
         <p>{this.props.script.text}</p>

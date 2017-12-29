@@ -7,7 +7,8 @@ import './index.css';
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store.js'
-import Scripts from './containers/scripts.js'
+import ScriptsList from './containers/scriptsList.js'
+import ScriptShow from './containers/scriptShow.js'
 
 const link = {
   width: '100px',
@@ -50,7 +51,8 @@ ReactDOM.render(
         <div className="App">
           <Navbar />
           <Route exact path="/" component={App} />
-          <Route exact path="/scripts" component={Scripts} />
+          <Route path="/scripts/:scriptId" component={ScriptShow}/>
+          <Route exact path="/scripts" component={ScriptsList} />
         </div>
       </Router>
     </Provider>,

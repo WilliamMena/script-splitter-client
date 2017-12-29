@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
-import { getScripts } from '../actions/scripts.js'
-import Script from '../components/script.js'
 
-class Scripts extends Component {
+import { getScripts } from '../actions/scripts.js'
+import { Link } from 'react-router-dom';
+
+
+
+class ScriptsList extends Component {
 
 
   componentDidMount() {
@@ -15,8 +18,11 @@ class Scripts extends Component {
     return (
       <div>
         <h1>All Scripts</h1>
+
         {this.props.scripts.map((script, index) =>
-          <Script key={index} script={script} />
+          <div key={index}>
+            <Link to={`/scripts/${script.id}`}>{script.title}</ Link>
+          </div>
         )}
       </div>
 
@@ -29,4 +35,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, {getScripts})(Scripts);
+export default connect(mapStateToProps, {getScripts})(ScriptsList);
