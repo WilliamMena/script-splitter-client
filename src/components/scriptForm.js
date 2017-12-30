@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 
-import { updateScriptFormData } from '../actions/scriptForm.js'
+import { updateScriptFormData, resertScriptFormData } from '../actions/scriptForm.js'
 import { createScript } from '../actions/scripts.js'
 import { renderScriptPreview } from '../actions/scriptPreview.js'
 import ScriptShowPreview from './scriptShowPreview.js'
@@ -28,6 +28,11 @@ class ScriptForm extends Component {
     this.props.renderScriptPreview(this.props.scriptFormData)
   }
 
+  handleResetClick = event => {
+    event.preventDefault()
+    this.props.resertScriptFormData()
+  }
+
 
   render() {
     const { title, text, characters } = this.props.scriptFormData
@@ -48,12 +53,13 @@ class ScriptForm extends Component {
 
 
           <button onClick={event => this.handlePreviewClick(event)}>Preview</button>
+          <button onClick={event => this.handleResetClick(event)}>Reset Form</button>
           <button type='submit'>Submit new script</button>
         </form>
 
         <div className='results'>
           <h1>Results</h1>
-          
+
           {this.props.scriptPreview.preview === false ? <p>Preview is off</p> : <ScriptShowPreview script={this.props.scriptPreview} />}
         </div>
 
@@ -72,4 +78,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {updateScriptFormData, createScript, renderScriptPreview})(ScriptForm)
+export default connect(mapStateToProps, {updateScriptFormData, createScript, renderScriptPreview, resertScriptFormData})(ScriptForm)
