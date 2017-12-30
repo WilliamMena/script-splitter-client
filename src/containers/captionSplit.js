@@ -2,10 +2,11 @@ import React from 'react';
 
 const splitText = ({text, characters}) => {
 
-  const limit = (characters ? characters : 45)
+  const limit = (characters ? parseFloat(characters) : 45)
   let currentCaptionCount = 0
   const textArray = text.split(" ")
   const captionsArray = [""];
+
 
   for (let i=0; i<textArray.length; i++) {
     if ((captionsArray[currentCaptionCount].length + textArray[i].length) < limit+1 ) {
