@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
 
 import './index.css';
 import App from './containers/App';
@@ -41,8 +41,6 @@ const Navbar = () =>
       }}
     >Scripts</NavLink>
   </div>;
-
-
 
 ReactDOM.render(
 
