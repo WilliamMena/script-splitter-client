@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { updateScriptFormData } from '../actions/scriptForm.js'
 import { createScript } from '../actions/scripts.js'
 import { renderScriptPreview } from '../actions/scriptPreview.js'
-import ScriptShowPreview from '../containers/scriptShowPreview.js'
+import ScriptShowPreview from './scriptShowPreview.js'
 
 class ScriptForm extends Component {
 
@@ -51,8 +51,11 @@ class ScriptForm extends Component {
           <button type='submit'>Submit new script</button>
         </form>
 
-        <h1>Results</h1>
-        {this.props.scriptPreview.preview === false ? <p>Preview is off</p> : <ScriptShowPreview script={this.props.scriptPreview} />}
+        <div className='results'>
+          <h1>Results</h1>
+          
+          {this.props.scriptPreview.preview === false ? <p>Preview is off</p> : <ScriptShowPreview script={this.props.scriptPreview} />}
+        </div>
 
 
 

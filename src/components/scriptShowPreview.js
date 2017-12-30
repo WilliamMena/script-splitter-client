@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CaptionSplit from './captionSplit.js'
+import CaptionSplit from '../containers/captionSplit.js'
 
 const ScriptShowPreview = ({script}) =>
   <div key={script.id}>
