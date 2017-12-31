@@ -25,7 +25,11 @@ const splitText = ({text, characters}) => {
 
 const CaptionSplit = (props) =>
   <div>
-      {splitText(props)}
+    {props.text ?
+      splitText(props)
+      :
+      <p>No caption available</p>
+    }
   </div>
 
 export default CaptionSplit

@@ -11,17 +11,14 @@ class ScriptShow extends Component {
     super(props)
 
     this.state = {
-      script: [],
       loading: true
     }
   }
 
   componentDidMount() {
-    this.props.getScripts()
     this.setState({
       loading: false
     })
-
   }
 
   handleOnClick = event => {
@@ -36,15 +33,16 @@ class ScriptShow extends Component {
   render() {
     return (
       <div key={this.props.script.id}>
-        <h1>{this.props.script.title}</h1>
-        <p>Split by {this.props.script.characters || 45} characters</p>
-        <button name={this.props.script.id} onClick={event => this.handleOnClick(event)} >Delete</button>
-        <p>{this.props.script.text}</p>
-
         {this.state.loading === true ?
           <p>Loading scripts</p>
           :
-          <CaptionSplit characters={this.props.script.characters} text={this.props.script.text} />
+          <div>
+            <h1>{this.props.script.title}</h1>
+            <p>Split by {this.props.script.characters || 45} characters</p>
+            <button name={this.props.script.id} onClick={event => this.handleOnClick(event)} >Delete</button>
+            <p>{this.props.script.text}</p>
+            <CaptionSplit characters={this.props.script.characters} text={this.props.script.text} />
+          </div>
         }
 
       </div>
