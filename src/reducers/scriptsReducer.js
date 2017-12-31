@@ -8,7 +8,7 @@ export default function scriptsReducer(state = [], action) {
 
     case 'DELETE_SCRIPT_SUCCESS':
     // figure out why I get an error after deleting
-      const scripts = state.filter(script => script.id !== action.scriptId)
+      const scripts = state.filter(script => script.id !== parseFloat(action.scriptId))
       return scripts
 
     default:

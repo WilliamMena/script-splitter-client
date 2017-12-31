@@ -1,18 +1,10 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux'
 
-import { getScripts } from '../actions/scripts.js'
 import { Link } from 'react-router-dom';
 
 
 
 class ScriptsList extends Component {
-
-
-  componentDidMount() {
-    this.props.getScripts()
-  }
-
 
   render() {
     return (
@@ -29,10 +21,5 @@ class ScriptsList extends Component {
     )
   }
 }
-const mapStateToProps = (state) => {
-  return ({
-    scripts: state.scripts
-  })
-}
 
-export default connect(mapStateToProps, {getScripts})(ScriptsList);
+export default ScriptsList

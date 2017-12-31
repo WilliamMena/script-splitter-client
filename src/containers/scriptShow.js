@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router'
 
 import CaptionSplit from './captionSplit.js'
 import {deleteScript, getScripts} from '../actions/scripts.js'
@@ -28,6 +29,8 @@ class ScriptShow extends Component {
     const id = event.target.name
     // continue on creating the delete button, check where the other actions go to
     this.props.deleteScript(id)
+    // return <Redirect to="/dashboard"/>
+    window.history.back();
   }
 
   render() {
