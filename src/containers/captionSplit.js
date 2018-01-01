@@ -28,7 +28,7 @@ const CaptionSplit = (props) =>
     {props.text ?
       splitText(props)
       :
-      <p>No caption available</p>
+      <p>This script does not exist. Please go back to the scripts list page.</p>
     }
   </div>
 

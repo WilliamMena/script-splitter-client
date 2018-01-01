@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router'
 
 import CaptionSplit from './captionSplit.js'
 import {deleteScript, getScripts} from '../actions/scripts.js'
@@ -30,21 +29,29 @@ class ScriptShow extends Component {
     window.history.back();
   }
 
+  render = () => {
+    if (this.props.script.characters === undefined) {
+      return <p>This script does not exist. Please return to master script.</p>
+    }
+    else if (this.state.loading === true) {
+      return <p>Loading scripts</p>
+    } else {
+      return (
+        <div>
+          <h1>{this.props.script.title}</h1>
+          <p>Split by {this.props.script.characters || 45} characters</p>
+          <button name={this.props.script.id} onClick={event => this.handleOnClick(event)} >Delete</button>
+          <p>{this.props.script.text}</p>
+          <CaptionSplit characters={this.props.script.characters} text={this.props.script.text} />
+        </div>
+      )
+    }
+  }
+
   render() {
     return (
       <div key={this.props.script.id}>
-        {this.state.loading === true ?
-          <p>Loading scripts</p>
-          :
-          <div>
-            <h1>{this.props.script.title}</h1>
-            <p>Split by {this.props.script.characters || 45} characters</p>
-            <button name={this.props.script.id} onClick={event => this.handleOnClick(event)} >Delete</button>
-            <p>{this.props.script.text}</p>
-            <CaptionSplit characters={this.props.script.characters} text={this.props.script.text} />
-          </div>
-        }
-
+        { this.render() }
       </div>
     )
   }
