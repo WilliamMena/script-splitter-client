@@ -5,12 +5,14 @@ const Home = () => {
   return(
     <div className="Home">
       <div>
-        <h2>Enter new script</h2>
+        <div className="Home-NewScript">
+          <h2>Enter new script</h2>
+        </div>
         <ScriptForm />
       </div>
 
-      <div>
-        <h3>Instructions/Info</h3>
+      <div className="Home-Instructions">
+        <h2>Instructions/Info</h2>
         <p>The purpose of this website is to split your script into seperate captions. Making it easier for you to just copy and paste into your editing software of choice. But to get the best results, you will need to do some preping beforehand.</p>
 
         <p>So in it's current form, this primarily works for 'single person scripts' due to the fact that it only splits the text that it's given. So this would be useful for people giving talks. A one man web show. Instructonal videos and things of that nature</p>
