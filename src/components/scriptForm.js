@@ -39,6 +39,7 @@ class ScriptForm extends Component {
     const { title, text, characters } = this.props.scriptFormData
     return (
       <div className="Script-form">
+        <h1>Enter new script</h1>
         <form onSubmit={this.handleOnSubmit}>
           <label>Title </label>
           <input type='text' name="title" value={title} onChange={event => this.handleOnChange(event)}/>
@@ -58,8 +59,8 @@ class ScriptForm extends Component {
           <button type='submit'>Submit new script</button>
         </form>
 
-        <div className='results'>
-          <h1>Results</h1>
+        <div className='Script-form-results'>
+          <h2>Results</h2>
 
           {this.props.scriptPreview.preview === false ? <p>Preview is off</p> : <ScriptShowPreview script={this.props.scriptPreview} />}
         </div>

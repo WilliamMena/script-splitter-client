@@ -8,7 +8,7 @@ class ScriptsList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Scripts-List">
         <h1>All Scripts</h1>
 
         {this.props.scripts.map((script, index) =>

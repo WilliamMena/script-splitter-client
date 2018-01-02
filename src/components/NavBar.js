@@ -11,7 +11,7 @@ const link = {
 }
 
 const NavBar = () =>
-  <div>
+  <div className="Header">
     <NavLink
       to="/"
       /* set exact so it knows only to only set activeStyle when route is deeply equal to link */
