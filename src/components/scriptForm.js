@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 
-import { updateScriptFormData, resertScriptFormData } from '../actions/scriptForm.js'
+import { updateScriptFormData, resetScriptFormData } from '../actions/scriptForm.js'
 import { createScript } from '../actions/scripts.js'
-import { renderScriptPreview } from '../actions/scriptPreview.js'
+import { renderScriptPreview, resetScriptPreview } from '../actions/scriptPreview.js'
 import ScriptShowPreview from './scriptShowPreview.js'
 
 class ScriptForm extends Component {
@@ -30,7 +30,8 @@ class ScriptForm extends Component {
 
   handleResetClick = event => {
     event.preventDefault()
-    this.props.resertScriptFormData()
+    this.props.resetScriptFormData()
+    this.props.resetScriptPreview()
   }
 
 
@@ -78,4 +79,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {updateScriptFormData, createScript, renderScriptPreview, resertScriptFormData})(ScriptForm)
+export default connect(mapStateToProps, {updateScriptFormData, createScript, renderScriptPreview, resetScriptFormData, resetScriptPreview})(ScriptForm)

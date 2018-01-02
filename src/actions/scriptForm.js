@@ -5,7 +5,7 @@ export const updateScriptFormData = scriptFormData => {
   }
 }
 
-export const resertScriptFormData = () => {
+export const resetScriptFormData = () => {
   return {
     type: "RESET_SCRIPT_FORM"
   }

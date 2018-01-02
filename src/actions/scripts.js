@@ -1,4 +1,4 @@
-import {resertScriptFormData} from './scriptForm.js'
+import {resetScriptFormData} from './scriptForm.js'
 
 const API_URL = process.env.REACT_APP_API_URL
 
@@ -48,7 +48,7 @@ export const createScript = script => {
     .then(response => response.json())
     .then(script => {
       dispatch(addScript(script))
-      dispatch(resertScriptFormData())
+      dispatch(resetScriptFormData())
     })
     .catch(error => console.log(error))
   }

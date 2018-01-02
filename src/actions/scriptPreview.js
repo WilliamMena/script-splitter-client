@@ -4,3 +4,9 @@ export const renderScriptPreview = scriptPreviewData => {
     scriptPreviewData
   }
 }
+
+export const resetScriptPreview = () => {
+  return {
+    type: "RESET_SCRIPT_PREVIEW"
+  }
+}
