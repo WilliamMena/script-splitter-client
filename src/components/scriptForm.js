@@ -49,7 +49,7 @@ class ScriptForm extends Component {
           <textarea name="text" value={text} onChange={event => this.handleOnChange(event)} rows='8' cols='100' />
 
           <br/>
-          <label>Split by how many characters? (Including spaces) </label>
+          <label>Split by how many characters? (Including spaces) Default is 45. </label>
           <input type="text" name="characters" value={characters} onChange={event => this.handleOnChange(event)} />
           <br/>
 
