@@ -37,7 +37,7 @@ export const getScripts = () => {
   }
 }
 
-export const createScript = script => {
+export const createScript = (script, history) => {
 
   return dispatch => {
     return fetch(`${API_URL}/scripts`, {
@@ -48,7 +48,9 @@ export const createScript = script => {
     .then(response => response.json())
     .then(script => {
       dispatch(addScript(script))
+
       dispatch(resetScriptFormData())
+      history.push(`/scripts/${script.id}`)
     })
     .catch(error => console.log(error))
   }

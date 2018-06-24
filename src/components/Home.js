@@ -1,11 +1,11 @@
 import React from 'react';
 import ScriptForm from './scriptForm.js'
-const Home = () => {
-
+const Home = (props) => {
+  console.log(props)
   return(
     <div className="Home">
       <div className="Script-form">
-        <ScriptForm />
+        <ScriptForm history={props.history} />
       </div>
 
       <div className="Home-Instructions">

@@ -5,7 +5,7 @@ export default function scriptsReducer(state = [], action) {
 
     case 'CREATE_SCRIPT_SUCCESS':
       return state.concat(action.script)
-
+      //return [...state, action.script] spread operator
     case 'DELETE_SCRIPT_SUCCESS':
     // figure out why I get an error after deleting
       const scripts = state.filter(script => script.id !== parseFloat(action.scriptId))

@@ -20,7 +20,8 @@ class ScriptForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault()
-    this.props.createScript(this.props.scriptFormData)
+    this.props.createScript(this.props.scriptFormData, this.props.history)
+
   }
 
   handlePreviewClick = event => {
