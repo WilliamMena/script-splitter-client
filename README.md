@@ -1,6 +1,6 @@
-# ScriptSplitter-API
+# ScriptSplitter-CLIENT
 
-This is the API portion of my personal project ScriptSplitter. The idea of the application is to split single speaker video scripts into captions for easy importing into your Video Editing Software of choice. The API portion houses all of the saved data. So Reading and Writing functionality is all given here.
+This is the Client side portion of my personal project ScriptSplitter. The idea of the application is to split single speaker video scripts into captions for easy importing into your Video Editing Software of choice. The API portion houses all of the saved data. So Reading and Writing functionality is all given here.
 
 ## Getting Started
 
