@@ -37,7 +37,7 @@ class ScriptForm extends Component {
 
 
   render() {
-    const { title, text, characters } = this.props.scriptFormData
+    const { title, text, characters, timecode } = this.props.scriptFormData
     return (
       <div className="Script-form">
         <h1>Enter new script</h1>
@@ -52,6 +52,10 @@ class ScriptForm extends Component {
           <br/>
           <label>Split by how many characters? (Including spaces) Default is 45. </label>
           <input type="text" name="characters" value={characters} onChange={event => this.handleOnChange(event)} />
+          <br/>
+
+          <label>How long is your video? Defaults to 10 Minutes. </label>
+          <input type="text" name="timecode" value={timecode} placeholder="hh:mm:ss" onChange={event => this.handleOnChange(event)} />
           <br/>
 
 
