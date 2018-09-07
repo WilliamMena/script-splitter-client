@@ -39,7 +39,7 @@ class ScriptShow extends Component {
         <div>
           <h1>{this.props.script.title}</h1>
           <p>Split by {this.props.script.characters || 45} characters</p>
-          <p>Timecode: {this.props.script.timecode.slice(11,-5) || "undefined"}</p>
+          <p>Timecode: {this.props.script.timecode? this.props.script.timecode.slice(11,-5) : "undefined"}</p>
           <button name={this.props.script.id} onClick={event => this.handleOnClick(event)} >Delete</button>
           <p>{this.props.script.text}</p>
           <CaptionSplit characters={this.props.script.characters} text={this.props.script.text} />
