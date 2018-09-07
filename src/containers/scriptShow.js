@@ -8,7 +8,6 @@ class ScriptShow extends Component {
 
   constructor(props) {
     super(props)
-
     this.state = {
       loading: true
     }
@@ -40,6 +39,7 @@ class ScriptShow extends Component {
         <div>
           <h1>{this.props.script.title}</h1>
           <p>Split by {this.props.script.characters || 45} characters</p>
+          <p>Timecode: {this.props.script.timecode || "undefined"}</p>
           <button name={this.props.script.id} onClick={event => this.handleOnClick(event)} >Delete</button>
           <p>{this.props.script.text}</p>
           <CaptionSplit characters={this.props.script.characters} text={this.props.script.text} />

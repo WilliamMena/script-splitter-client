@@ -1,7 +1,8 @@
 const initialState = {
   title: '',
   text: '',
-  characters: 0
+  characters: 0,
+  timecode: "00:00:00"
 }
 
 export default function scriptFormData(state = initialState, action) {
