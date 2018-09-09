@@ -1,7 +1,6 @@
 import React from 'react';
 import ScriptForm from './scriptForm.js'
 const Home = (props) => {
-  console.log(props)
   return(
     <div className="Home">
       <div className="Script-form">
