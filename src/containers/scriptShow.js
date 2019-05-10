@@ -48,13 +48,13 @@ class ScriptShow extends Component {
     }
   }
 
-  render() {
-    return (
-      <div key={this.props.script.id}>
-        { this.render() }
-      </div>
-    )
-  }
+  // render() {
+  //   return (
+  //     <div key={this.props.script.id}>
+  //       { this.render() }
+  //     </div>
+  //   )
+  // }
 }
 
 const mapStateToProps = (state, ownProps) => {

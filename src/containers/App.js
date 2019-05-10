@@ -8,6 +8,7 @@ import './App.css';
 import Home from '../components/Home.js'
 import ScriptsList from './scriptsList.js'
 import ScriptShow from './scriptShow.js'
+import ScriptXml from './scriptXml.js'
 import NavBar from '../components/NavBar.js'
 import Footer from '../components/Footer.js'
 
@@ -30,7 +31,8 @@ class App extends Component {
                 () => <ScriptShow scripts={this.props.scripts} />
               } />
             */}
-            <Route path="/scripts/:scriptId" component={ScriptShow}/>
+            <Route exact path="/scripts/:scriptId" component={ScriptShow}/>
+            <Route exact path="/scripts/:scriptId/xml" component={ScriptXml}/>
             <Route exact path="/scripts" render={() => <ScriptsList scripts={this.props.scripts} />} />
             <Footer />
           </div>
