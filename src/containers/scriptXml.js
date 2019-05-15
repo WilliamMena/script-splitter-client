@@ -28,8 +28,9 @@ xmlns:tts="http://www.w3.org/ns/ttml#styling">
       //   </p>`
       // }))
       
-      script.captions.map(function(caption) {
-        myString += `<p begin="${caption.in_point}:00" end="${caption.out_point}:00">
+      script.captions.sort(function(a, b){return a.id-b.id}).map(function(caption) {
+        myString += `
+        <p begin="${caption.in_point}:00" end="${caption.out_point}:00">
           ${caption.text}
         </p>`
       })

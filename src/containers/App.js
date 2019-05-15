@@ -32,8 +32,8 @@ class App extends Component {
               } />
             */}
             <Route exact path="/scripts/:scriptId" component={ScriptShow}/>
-            <Route exact path="/scripts/:scriptId/xml" component={ScriptXml}/>
             <Route exact path="/scripts" render={() => <ScriptsList scripts={this.props.scripts} />} />
+            <Route exact path="/scripts/:scriptId/xml" component={ScriptXml}/>
             <Footer />
           </div>
         </Router>
