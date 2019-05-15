@@ -1,4 +1,4 @@
-import {createStore, applyMiddleware, combineReducers} from 'redux';
+import {createStore, compose, applyMiddleware, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
 import scriptsReducer from "./reducers/scriptsReducer.js"
 import scriptFormData from './reducers/scriptFormData.js'
@@ -11,7 +11,8 @@ const reducers = combineReducers({
 })
 const middleware = [thunk];
 
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 export default createStore(
   reducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(...middleware));
+  composeEnhancer(applyMiddleware(...middleware)));
