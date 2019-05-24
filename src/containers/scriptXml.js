@@ -5,17 +5,17 @@ const API_URL = process.env.REACT_APP_API_URL
 
 var current_url = window.location.href.split('/')
 var specific_id = current_url[current_url.length - 2]
-var myString = `
-<tt xml:lang="en" tts:extent="1920px 1080px"
-xmlns:tts="http://www.w3.org/ns/ttml#styling">
-<head>
-  <!-- <layout>
+// var myString = `
+// <tt xml:lang="en" tts:extent="1920px 1080px"
+// xmlns:tts="http://www.w3.org/ns/ttml#styling">
+// <head>
+//   <!-- <layout>
 
-  </layout> -->
-</head>
-<body>
-  <div xml:lang="en">
-  `
+//   </layout> -->
+// </head>
+// <body>
+//   <div xml:lang="en">
+//   `
 
   fetch(`${API_URL}/scripts/${specific_id}`, {
     method: "GET",
