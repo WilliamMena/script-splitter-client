@@ -18,6 +18,10 @@ After that has completed, enter `rails s -p 3001` in the terminal
 
 After that, your API should be up and running.
 
+#### Front End
+
+Once you have your API up and running, enter `npm start` on a seperate terminal and the application will open up.
+
 ## Built With
 
 * [Ruby on Rails](http://www.dropwizard.io/1.0.2/docs/) - As the API
