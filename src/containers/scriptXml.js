@@ -22,11 +22,17 @@ var specific_id = current_url[current_url.length - 2]
     headers: {"Content-Type": "application/json"}})
     .then(response => response.json())
     .then(script => {
+
+
+      // Uncomment below section to make XML work on only XML link
+
       // console.log(script.captions.map(function(caption) {
       //   return `<p begin="${caption.in_point}:00" end="${caption.out_point}:00">
       //     ${caption.text}
       //   </p>`
       // }))
+
+      
       
 //       script.captions.sort(function(a, b){return a.id-b.id}).map(function(caption) {
 //         myString += `

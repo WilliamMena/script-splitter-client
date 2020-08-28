@@ -4,7 +4,7 @@ This is the Client side portion of my personal project ScriptSplitter. The idea 
 
 ## Getting Started
 
-To get the project running we would need both the [Client Side](https://github.com/WilliamMena/script-splitter-client) application and the API downloaded on your system. You will also need to have [PostgreSQL](https://www.postgresql.org/download/) downloaded on your system.
+To get the project running we would need both the [Client Side](https://github.com/WilliamMena/script-splitter-client) application and the [API](https://github.com/WilliamMena/script-splitter-api) downloaded on your system. You will also need to have [PostgreSQL](https://www.postgresql.org/download/) downloaded on your system.
 
 Once you have both applications downloaded, you will need 2 terminals open. One inside of the root folder of each application.
 
